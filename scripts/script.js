@@ -66,9 +66,20 @@ const doubleBalance =function(){
 // Filter Rich
 
 const filterRich = function() {
-    data_box = data_box.filter((user) => user.balance>50000);
+    data_box = data_box.filter((user) => user.balance>75000);
     updateDOM();
 };
+
+// total amount
+
+const totalBalance = function(){
+    // reduce takes two params i.e. accumulator and user
+    const wealth = data_box.reduce((acc, user)=>(acc= acc+ user.balance), 0);
+
+    const wealthEl = document.createElement('div');
+    wealthEl.innerHTML = `<h3>Total Balance: <strong>${formatToCurrency(wealth)}</strong></h3>`;
+    main.appendChild(wealthEl);
+}
 
 // call random users 
 
@@ -85,3 +96,5 @@ btnAddUser.addEventListener('click', getRandomUser);
 btnDouble.addEventListener('click', doubleBalance);
 
 btnFilter.addEventListener('click', filterRich);
+
+btnTotal.addEventListener('click', totalBalance);
