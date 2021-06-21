@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
 
+:root {
+    --selected: rgb(170, 226, 220);
+    --text-color: #777;
+    --white-color: #fcfcfc;
+    --dark-color: rgb(9, 73, 65);
+}
 
 * {
     margin: 0;
@@ -13,5 +19,73 @@ html{
 
 body{
     font-family: 'Poppins', sans-serif;
+    background-color: var(--dark-color);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    color: var(--white-color);
+}
+
+.container {
+    display: flex;
+    padding: 1.1rem;
+    margin: 0 auto;
+    max-width: 100%;
+    /* starting of block will be from 800px and then will take all width */
+    width: 50rem;
+}
+
+aside{
+    padding: 0.5rem 1.1rem;
+    width: 16rem;
+    border-right: 1px solid var(--white-color);
+}
+
+button{
+    background-color: var(--selected);
+    color: var(--dark-color);
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--white-color);
+    border-radius: 5px;
+    display: block;
+    margin: 0.8rem auto;
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button:focus{
+    outline: none;
+}
+
+button:hover{
+    transform: translateY(4px);
+}
+button:active{
+    transform: scale(0.9);
+}
+
+main{
+    flex: 1;
+    padding: 0.5rem 1rem;
+}
+
+h2{
+    border-bottom: 1px solid var(--white-color);
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+.users{
+    display: flex;
+    justify-content: space-between;
+    font-size: .2rem;
+    margin-bottom: 0.5rem;
 }
 

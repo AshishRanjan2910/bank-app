@@ -100,6 +100,7 @@ select,
 textarea {
   font-family: inherit;
   font-size: 100%;
+  border-radius: 0.3rem;
   margin: 0;
 }
 button,
