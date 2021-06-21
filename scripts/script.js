@@ -41,6 +41,7 @@ const addData = function(obj){
 const updateDOM = function(provideData = data_box){
     //clear main
     main.innerHTML = '<h2><strong>Name</strong> Balance</h2>';
+    //add data one by one
     provideData.forEach(item =>{
         const element = document.createElement('div');
         element.classList.add('users');
@@ -51,6 +52,15 @@ const updateDOM = function(provideData = data_box){
 
 function formatToCurrency(amount){
     return amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&, ');
+}
+
+// Double the balance amount
+
+const doubleBalance =function(){
+    data_box = data_box.map(user=> {
+        return {...user, balance: user.balance*2};
+    })
+    updateDOM();
 }
 
 
@@ -65,4 +75,6 @@ getRandomUser();
 
 // add new user using button
 btnAddUser.addEventListener('click', getRandomUser);
+
+btnDouble.addEventListener('click', doubleBalance);
 
