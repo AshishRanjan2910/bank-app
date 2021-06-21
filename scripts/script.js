@@ -63,6 +63,12 @@ const doubleBalance =function(){
     updateDOM();
 }
 
+// Filter Rich
+
+const filterRich = function() {
+    data_box = data_box.filter((user) => user.balance>50000);
+    updateDOM();
+};
 
 // call random users 
 
@@ -78,3 +84,4 @@ btnAddUser.addEventListener('click', getRandomUser);
 
 btnDouble.addEventListener('click', doubleBalance);
 
+btnFilter.addEventListener('click', filterRich);
