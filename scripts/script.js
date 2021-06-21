@@ -3,6 +3,7 @@ const btnAddUser = document.getElementById('add-user');
 const btnDouble = document.getElementById('double');
 const btnFilter = document.getElementById('filter-rich');
 const btnTotal = document.getElementById('total');
+const btnSort = document.getElementById('sort');
 
 //add user
 
@@ -81,6 +82,13 @@ const totalBalance = function(){
     main.appendChild(wealthEl);
 }
 
+// sort in ascending order
+
+const sortBalance = function(){
+    data_box = data_box.sort((a, b) => (a.balance-b.balance));
+    updateDOM();
+} 
+
 // call random users 
 
 getRandomUser();
@@ -98,3 +106,5 @@ btnDouble.addEventListener('click', doubleBalance);
 btnFilter.addEventListener('click', filterRich);
 
 btnTotal.addEventListener('click', totalBalance);
+
+btnSort.addEventListener('click', sortBalance);
