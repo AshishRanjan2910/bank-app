@@ -85,7 +85,7 @@ h2{
 .users{
     display: flex;
     justify-content: space-between;
-    font-size: .2rem;
+    font-size: 1.2rem;
     margin-bottom: 0.5rem;
 }
 
